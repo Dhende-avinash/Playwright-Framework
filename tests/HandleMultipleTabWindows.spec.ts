@@ -22,7 +22,7 @@ test('Multiple Tabs', async({page : Page})=>{
 
 })
 
-test.only('Multiple Windows', async({page : Page})=>{
+test('Multiple Windows', async({page : Page})=>{
 
     const browser = await chromium.launch({headless:false});
     const context = await browser.newContext();

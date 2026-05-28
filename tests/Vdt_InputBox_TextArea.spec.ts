@@ -20,7 +20,7 @@ test('Validate Input Boxes', async({page})=>{
 
 })
 
-test.only('Validate Input Box Error Messege', async({page})=>{
+test('Validate Input Box Error Messege', async({page})=>{
     await page.goto('https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php');
      await page.locator("#headingOne .accordion-button.collapsed").click();
     await page.getByText(' Text Box').click();

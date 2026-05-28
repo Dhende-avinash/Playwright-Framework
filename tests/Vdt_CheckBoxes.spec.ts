@@ -25,7 +25,7 @@ test('Validate Check Boxes', async({page})=>{
 
 })
 
-test.only('Vdt CB in amazon', async({page})=>{
+test('Vdt CB in amazon', async({page})=>{
     await page.goto("https://www.amazon.in/")
 
     await page.getByPlaceholder("Search Amazon.in").fill("Books");
