@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
-
-test.skip('getByRole Locator', async({page})=>{
+// To RUN THIS FILE FIRST SKIP ALL TEST OR RUN ONLY ONE
+test('getByRole Locator', async({page})=>{
     await page.goto('https://www.amazon.in/');
 
     await page.getByRole("searchbox",{name:'Search Amazon.in'}).fill("Mobiles");
@@ -10,7 +10,7 @@ test.skip('getByRole Locator', async({page})=>{
     //await page.waitForTimeout(5000);// hard coded wait
 })
 
-test.skip('getByText Locator', async({page})=>{
+test('getByText Locator', async({page})=>{
 
     await page.goto('https://www.amazon.in/');
 
@@ -19,7 +19,7 @@ test.skip('getByText Locator', async({page})=>{
     
 })
 
-test.skip('getByLabel Locator', async({page})=>{
+test('getByLabel Locator', async({page})=>{
 
     await page.goto('https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php');
 
@@ -31,7 +31,7 @@ test.skip('getByLabel Locator', async({page})=>{
 
 })
 
-test.skip ('getByPlaceholder Locator', async({page})=>{
+test ('getByPlaceholder Locator', async({page})=>{
 
     await page.goto('https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php');
 
@@ -40,7 +40,7 @@ test.skip ('getByPlaceholder Locator', async({page})=>{
 
 })
 
-test.skip ('getByAltText Locator', async({page})=>{
+test ('getByAltText Locator', async({page})=>{
 
     await page.goto('https://www.amazon.in/ref=nav_logo');
 
@@ -52,7 +52,7 @@ test.skip ('getByAltText Locator', async({page})=>{
 
 })
 
-test.skip('getByTitle Locator', async({page})=>{
+test('getByTitle Locator', async({page})=>{
 
     await page.goto('https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php');
 
@@ -63,7 +63,7 @@ test.skip('getByTitle Locator', async({page})=>{
 
 })
 
-test.skip ('CSS Locator', async({page})=>{
+test ('CSS Locator', async({page})=>{
 
     await page.goto('https://www.saucedemo.com/');
 
@@ -76,7 +76,7 @@ test.skip ('CSS Locator', async({page})=>{
 
 })
 
-test.skip('nth() Locator', async({page})=>{
+test('nth() Locator', async({page})=>{
 
     await page.goto('https://www.amazon.in/ref=nav_logo');
 

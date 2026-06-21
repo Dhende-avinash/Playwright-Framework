@@ -27,10 +27,6 @@ test('Validate Input Boxes', async({page})=>{
 
     //vdt after clicking button previous messeg not shown
     await expect(page.locator("#check.hide")).not.toBeVisible();
-
-
-
-    
     
    
 

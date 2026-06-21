@@ -2,7 +2,8 @@ import{test,expect}from'@playwright/test';
 
 import * as path from 'path';
 
-test.skip('Upload Single File',async({page})=>{
+// To RUN THIS FILE FIRST SKIP ALL TEST OR RUN ONLY ONE
+test('Upload Single File',async({page})=>{
    
     await page.goto(" https://testpages.eviltester.com/pages/files/file-upload/");
                                   //Folder name ||file name

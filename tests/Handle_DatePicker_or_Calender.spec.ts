@@ -1,6 +1,6 @@
 import{test,expect}from'@playwright/test'
-
-test.skip('Handle Simple Date picker',async({page})=>{
+/*to Run This Tests Make Sure for All Tests use skip and run only one test */
+test('Handle Simple Date picker',async({page})=>{
     await page.goto("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
     
     await page.locator("#dob").fill("2025-05-13");
@@ -11,7 +11,7 @@ test.skip('Handle Simple Date picker',async({page})=>{
 
 })
 
-test.skip('Playwright Simple Date picker',async({page})=>{
+test('Playwright Simple Date picker',async({page})=>{
     await page.goto("https://www.globalsqa.com/demo-site/datepicker/");
 
    const frame = page.frameLocator("(//iframe[@class='demo-frame'])[1]");
@@ -24,7 +24,7 @@ test.skip('Playwright Simple Date picker',async({page})=>{
 
 })
 
-test.skip('Current Date picker',async({page})=>{
+test('Current Date picker',async({page})=>{
     await page.goto("https://www.globalsqa.com/demo-site/datepicker/");
 
    const frame = page.frameLocator("(//iframe[@class='demo-frame'])[1]");
@@ -63,7 +63,7 @@ test.skip('Current Date picker',async({page})=>{
 
 })
 
-test.skip('Select date, month, year based on user i/p',async({page})=>{
+test('Select date, month, year based on user i/p',async({page})=>{
     await page.goto("https://www.globalsqa.com/demo-site/datepicker/");
     const frame = page.frameLocator("(//iframe[@class='demo-frame'])[1]");
     await frame.locator("#datepicker").first().click();
@@ -112,3 +112,30 @@ test.skip('Select date, month, year based on user i/p',async({page})=>{
     await page.waitForTimeout(5000);
 
 })
+
+
+test('Select date, month, year simply', async ({ page }) => {
+    await page.goto("https://www.globalsqa.com/demo-site/datepicker/");
+    
+    const frame = page.frameLocator("//iframe[@class='demo-frame']").first();
+    
+    // 1. Turn on the Month/Year standard dropdowns inside the calendar widget via JavaScript
+    await frame.locator("#datepicker").evaluate((el) => {
+    // Cast window to 'any' so TypeScript stops checking its properties
+    (window as any).$(el).datepicker("option", { changeMonth: true, changeYear: true });
+    });
+
+    // 2. Click the input field to open the calendar
+    await frame.locator("#datepicker").click();
+
+    // 3. Select the Year and Month directly from the newly visible dropdowns
+    await frame.locator(".ui-datepicker-year").selectOption("2096");
+    await frame.locator(".ui-datepicker-month").selectOption({ label: "May" }); // Select by text label
+
+    // 4. Click the exact day
+    await frame.locator(".ui-datepicker-calendar td a", { hasText: /^22$/ }).click();
+
+    // Verification
+    const selectedValue = await frame.locator("#datepicker").inputValue();
+    expect(selectedValue).toBe("05/22/2096");
+});

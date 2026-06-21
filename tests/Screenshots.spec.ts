@@ -1,6 +1,6 @@
 import {test, expect}from '@playwright/test'
-
-test.skip('Take screenshots',async({page})=>{
+// To run This File, First use .only or .skip to avoid test fail
+test('Take screenshots',async({page})=>{
     await page.goto("https://www.amazon.in/");
 
     //await page.screenshot({path:'amazon1.png'});
@@ -15,7 +15,7 @@ test.skip('Take screenshots',async({page})=>{
     /*Append timestamp to avoid overwrittern file*/
 
 })
-test.skip('Take screenshots using congig file',async({page})=>{
+test('Take screenshots using congig file',async({page})=>{
      /*to run this test first un comment screenshot line in config file*/
     await page.goto("https://www.amazon.in/");
 

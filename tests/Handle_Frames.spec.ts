@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
-
-test.skip('Handling Frames Using Name', async({page})=>{
+// To RUN THIS FILE FIRST SKIP ALL TEST OR RUN ONLY ONE
+test('Handling Frames Using Name', async({page})=>{
     await page.goto("https://testpages.eviltester.com/pages/embedded-pages/frames/");
 
     //page.frames()-->To get no of frames in webpage, it gives refference of frames
@@ -27,7 +27,7 @@ test.skip('Handling Frames Using Name', async({page})=>{
 })
 
 
-test.skip('Handling Frames Using Url', async({page})=>{
+test('Handling Frames Using Url', async({page})=>{
     await page.goto("https://testpages.eviltester.com/pages/embedded-pages/frames/");
 
     const noOfFrames = page.frames();
@@ -50,7 +50,7 @@ test.skip('Handling Frames Using Url', async({page})=>{
     }
 })
 
-test.skip('Handling Frames Using Index', async({page})=>{
+test('Handling Frames Using Index', async({page})=>{
     await page.goto("https://testpages.eviltester.com/pages/embedded-pages/frames/");
 
     const noOfFrames= page.frames();//-->returns array of frames
@@ -67,7 +67,7 @@ test.skip('Handling Frames Using Index', async({page})=>{
 })
 
 
-test('Handling Nested Frames', async({page})=>{
+test('Handling Nested Frames or use of frameLocator', async({page})=>{
 
 await page.goto("https://play1.automationcamp.ir/frames.html");
 

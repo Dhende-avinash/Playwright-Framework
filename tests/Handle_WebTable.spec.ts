@@ -1,6 +1,7 @@
 import{test, expect} from '@playwright/test'
 
-test.skip('Handle WebTable',async({page})=>{
+/*Run Only one Test Other must Be Skip or only*/
+test('Handle WebTable',async({page})=>{
 
    await page.goto("https://letcode.in/table");
 
@@ -33,7 +34,7 @@ test.skip('Handle WebTable',async({page})=>{
   
 })
 
-test.skip('Handle CheckBox in WebTable',async({page})=>{
+test('Handle CheckBox in WebTable',async({page})=>{
     
    await page.goto("https://letcode.in/table");
     expect(page.locator("#simpletable")).toBeVisible;
@@ -63,7 +64,7 @@ test.skip('Handle CheckBox in WebTable',async({page})=>{
 
 test('Handle WebTable By clicking On it',async({page})=>{
     await page.goto("https://letcode.in/table");
-    expect(page.locator(".is-hoverable.is-fullwidth")).toBeVisible;
+    expect(page.locator(".is-hoverable.is-fullwidth")).toBeVisible();
 
     const calorie = await page.locator(".is-hoverable.is-fullwidth tr td:nth-of-type(2)").allTextContents();
     console.log(calorie);

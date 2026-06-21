@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test.skip('Hard Assertions1', async({page})=>{
+test('Hard Assertions1', async({page})=>{
 
     await page.goto('https://www.saucedemo.com/')
 

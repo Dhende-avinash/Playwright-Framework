@@ -2,7 +2,7 @@ import{test, expect} from '@playwright/test';
 
 // Before Run This Code comment Line No. 7 to 24
 
-test.skip('Vdt STANDARD DropDown', async({page})=>{
+test('Vdt STANDARD DropDown', async({page})=>{
     await page.goto('https://www.amazon.in/');
 /*
     await page.locator("#searchDropdownBox").selectOption("Alexa Skills"); // by using value.
@@ -32,7 +32,7 @@ test.skip('Vdt STANDARD DropDown', async({page})=>{
 
 })
 
-test.skip('Vdt COUSTOM Drop Down', async({page})=>{
+test('Vdt COUSTOM Drop Down', async({page})=>{
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
     await page.waitForTimeout(3000);

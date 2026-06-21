@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.skip('Mouse Click', async ({ page }) => {
+// To run This File Use .Skip & run Only one Test
+test('Mouse Click', async ({ page }) => {
     await page.goto("https://play1.automationcamp.ir/mouse_events.html");
 
     await expect(page.locator("span#click_type")).not.toBeVisible();
@@ -11,7 +12,7 @@ test.skip('Mouse Click', async ({ page }) => {
 
 })
 
-test.skip('Mouse Right Click', async ({ page }) => {
+test('Mouse Right Click', async ({ page }) => {
     await page.goto("https://play1.automationcamp.ir/mouse_events.html");
     
     await page.locator("div #click_area").click({button:'right'});
@@ -22,7 +23,7 @@ test.skip('Mouse Right Click', async ({ page }) => {
 
 })
 
-test.skip('Mouse Double click', async({page})=>{
+test('Mouse Double click', async({page})=>{
     await page.goto("https://play1.automationcamp.ir/mouse_events.html");
     
     await page.locator("div #click_area").dblclick;
@@ -31,7 +32,7 @@ test.skip('Mouse Double click', async({page})=>{
     await expect(page.locator("span#click_type")).toHaveText("Double-Click");
     
 })
-test.skip('Mouse Hover and click', async({page})=>{
+test('Mouse Hover and click', async({page})=>{
     await page.goto("https://play1.automationcamp.ir/mouse_events.html");
 
     await page.locator("button.dropbtn").hover();
@@ -43,7 +44,7 @@ test.skip('Mouse Hover and click', async({page})=>{
     await expect(page.locator("h4#hover_validate")).toHaveText("Java");
 
 })
-test.skip('Drag and Drop', async({page})=>{
+test('Drag and Drop', async({page})=>{
     await page.goto("https://play1.automationcamp.ir/mouse_events.html");
 
     await page.dragAndDrop("#drag_source","#drop_target");

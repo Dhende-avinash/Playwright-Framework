@@ -1,6 +1,6 @@
 import{test, expect}from'@playwright/test'
-
-test.skip('Type, Enter, Backspace, salect word',async({page})=>{
+// To RUN THIS FILE FIRST SKIP ALL TEST OR RUN ONLY ONE
+test('Type, Enter, Backspace, salect word',async({page})=>{
     await page.goto("https://www.amazon.in/");
 
     await page.getByPlaceholder("Search Amazon.in").focus();
@@ -14,7 +14,7 @@ test.skip('Type, Enter, Backspace, salect word',async({page})=>{
 
 })
 
-test.skip('Copy paste',async({page})=>{
+test('Copy paste',async({page})=>{
     await page.goto("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
 
     await page.locator("#name").focus();
